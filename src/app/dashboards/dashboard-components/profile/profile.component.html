@@ -1,0 +1,210 @@
+<div class="row">
+    <!-- Column -->
+    <div class="col-lg-4 col-xlg-3 col-md-5">
+        <div class="card">
+            <div class="card-body">
+                <div class="m-t-30 text-center">
+                    <img src="assets/images/users/5.jpg" class="rounded-circle" width="150" />
+                    <h4 class="card-title m-t-10">Hanna Gover</h4>
+                    <h6 class="card-subtitle">Accoubts Manager Amix corp</h6>
+                    <div class="row text-center justify-content-md-center">
+                        <div class="col-4">
+                            <a href="javascript:void(0)" class="link">
+                                <i class="icon-people m-r-10"></i>
+                                254
+                            </a>
+                        </div>
+                        <div class="col-4">
+                            <a href="javascript:void(0)" class="link">
+                                <i class="icon-picture m-r-10"></i>
+                                54
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <hr> </div>
+            <div class="card-body">
+                <small class="text-muted">Email address </small>
+                <h6>hannagover@gmail.com</h6>
+                <small class="text-muted p-t-30 db">Phone</small>
+                <h6>+91 654 784 547</h6>
+                <small class="text-muted p-t-30 db">Address</small>
+                <h6>71 Pilgrim Avenue Chevy Chase, MD 20815</h6>
+                <small class="text-muted p-t-30 db">Social Profile</small>
+                <br/>
+                <button class="btn btn-circle btn-secondary">
+                    <i class="fab fa-facebook"></i>
+                </button>
+                <button class="btn btn-circle btn-secondary">
+                    <i class="fab fa-twitter"></i>
+                </button>
+                <button class="btn btn-circle btn-secondary">
+                    <i class="fab fa-youtube"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- Column -->
+    <!-- Column -->
+    <div class="col-lg-8 col-xlg-9 col-md-7">
+        <div class="card">
+            <ngb-tabset type="pills" class="custom-pills">
+                <ngb-tab title="Buy">
+                     <ng-template ngbTabContent>
+                        <div class="card-body">
+                            <app-user-buyer-details></app-user-buyer-details>
+                        </div>
+                    </ng-template> 
+                </ngb-tab>
+                <ngb-tab title="Sell">
+                    <ng-template ngbTabContent>
+                        <div class="card-body">
+                            <app-user-seller-details></app-user-seller-details>
+                        </div>
+                    </ng-template> 
+                </ngb-tab>
+
+                <ngb-tab title="Post Trade">
+                    <!-- <ng-template ngbTabContent>
+                        <div class="card-body">
+                            <form class="form-horizontal form-material">
+                                <div class="form-group">
+                                    <label class="col-md-12">Full Name</label>
+                                    <div class="col-md-12">
+                                        <input type="text" placeholder="Johnathan Doe" class="form-control form-control-line">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="example-email" class="col-md-12">Email</label>
+                                    <div class="col-md-12">
+                                        <input type="email" placeholder="johnathan@admin.com" class="form-control form-control-line" name="example-email" id="example-email">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-12">Password</label>
+                                    <div class="col-md-12">
+                                        <input type="password" value="password" class="form-control form-control-line">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-12">Phone No</label>
+                                    <div class="col-md-12">
+                                        <input type="text" placeholder="123 456 7890" class="form-control form-control-line">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-12">Message</label>
+                                    <div class="col-md-12">
+                                        <textarea rows="5" class="form-control form-control-line"></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-12">Select Country</label>
+                                    <div class="col-sm-12">
+                                        <select class="form-control form-control-line">
+                                            <option>London</option>
+                                            <option>India</option>
+                                            <option>Usa</option>
+                                            <option>Canada</option>
+                                            <option>Thailand</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <button class="btn btn-success">Update Profile</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </ng-template> -->
+                </ngb-tab>
+                <ngb-tab title="My Wallet">
+                    <ng-template ngbTabContent>
+                        <button type="button" (click)="showModal()" class="btn btn-rounded btn-primary">Send</button>
+                        <button type="button" (click)="showmModal()" class="btn btn-rounded btn-primary">Recieve</button>
+                       <div class="card-body">
+                           <app-earnings></app-earnings>
+                       </div>
+                   </ng-template> 
+               </ngb-tab>
+            </ngb-tabset>
+        </div>
+    </div>
+    <!-- Column -->
+</div>
+<nz-modal
+      [(nzVisible)]="isVisible"
+      nzTitle="Send Bitcoins"
+      (nzOnCancel)="handleCancel()"
+      (nzOnOk)="handleOk()"
+      [nzOkLoading]="isOkLoading">
+      <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-12">
+              <div class="card">
+                  <div class="card-body">
+                      <form class="m-t-30">
+                          <div class="form-group m-b-30">
+                              <h4 class= "card-title">Select Currency</h4>
+                              <select class="form-control" id="exampleFormControlSelect1">
+                                  <option>Bitcoin</option>
+                                  <option>Ethereum</option>
+                              </select><br>
+                              <h4 class="card-title">To</h4>
+                             <input type="text" class="form-control" id="nametext" aria-describedby="name" placeholder="paste destination here"><br>
+                             <h4 class= "card-title">Amount</h4>
+                             <div class="input-group mb-3">
+                                <input type="text" class="form-control" placeholder="0.00" aria-describedby="basic-addon1">
+                                <div class="input-group-append">
+                                    <span class="input-group-text">BTC</span>
+                                </div>
+                                <input type="text" class="form-control" placeholder="$0.00" aria-describedby="basic-addon1">
+                                <div class="input-group-append">
+                                    <span class="input-group-text">USD</span>
+                                </div>
+                            </div>
+                            <h4 class="card-title">Description</h4>
+                             <div class="m-t-20">
+                              <textarea class="form-control" rows="3" placeholder="Text Here..."></textarea>
+                             </div>
+                          </div>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>    
+</nz-modal>
+<nz-modal
+[(nzVisible)]="is2ndVisible"
+nzTitle="Recieve Bitcoins"
+(nzOnCancel)="handleCancel()"
+(nzOnOk)="handleOk()"
+[nzOkLoading]="isOkLoading">
+<div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12">
+        <div class="card">
+            <div class="card-body">
+                <form class="m-t-30">
+                    <div class="form-group m-b-30">
+                        <h4 class= "card-title">Select Currency:</h4>
+                        <select class="form-control" id="exampleFormControlSelect1">
+                            <option>Bitcoin</option>
+                            <option>Ethereum</option>
+                        </select><br><br>
+                        <h4 class= "card-title">Address:</h4>
+                       <div class="input-group mb-3">
+                          <input type="text" class="form-control" placeholder="wallet address" aria-describedby="basic-addon1">
+                          <div class="input-group-append">
+                              <span class="input-group-text">Wallet</span>
+                          </div>
+                      </div>
+                      <small id="textHelp" class="form-text text-muted">Copy this wallet address</small>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</nz-modal>
