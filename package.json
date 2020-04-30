@@ -37,7 +37,7 @@
     "datatables.net": "^1.10.19",
     "datatables.net-dt": "^1.10.19",
     "express": "^4.17.1",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "lodash": "^4.17.14",
     "mongoose": "^5.8.11",
     "ng-chartist": "^1.1.1",
